@@ -1,0 +1,118 @@
+.footer {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.footer-logo {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-tagline {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.footer-social {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--bg-card);
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.footer-copyright {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.footer-inspired {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.footer-inspired a {
+    color: var(--accent-primary);
+    transition: color var(--transition-fast);
+}
+
+.footer-inspired a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
