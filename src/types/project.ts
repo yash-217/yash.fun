@@ -6,6 +6,7 @@ export interface Project {
     color: string;
     gradient: string;
     link?: string;
+    internalLink?: string;
     tags: string[];
     featured?: boolean;
 }

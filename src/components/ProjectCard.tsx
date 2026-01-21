@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import type { Project } from '../types/project';
 import './ProjectCard.css';
 
@@ -8,8 +9,12 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+    const navigate = useNavigate();
+
     const handleClick = () => {
-        if (project.link) {
+        if (project.internalLink) {
+            navigate(project.internalLink);
+        } else if (project.link) {
             window.open(project.link, '_blank');
         }
     };

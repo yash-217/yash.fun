@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Protein Builder & Visualization
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 3D web application designed to help users learn about and build protein structures using modern web technologies.
 
-Currently, two official plugins are available:
+## 🚀 Key Features: Protein Playground
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The **Protein Playground** is an interactive 3D environment where users can construct polypeptide chains from scratch.
 
-## React Compiler
+- **Categorized Peptide Library**: Choose from all 20 standard amino acids, organized by their chemical properties (Simple, Hydrocarbon, Acidic, Basic, etc.).
+- **3D Builder Canvas**: Drag and drop amino acids into a 3D space to start building your structure.
+- **Intelligent Snapping**: Residues automatically snap to valid peptide bond distances (~3.8Å) when placed near each other.
+- **3D Manipulation**: Rotate, zoom, and pan using OrbitControls. Drag individual residues to reposition them after placement.
+- **Structure Search (Foldseek Integration)**: Export your custom design to PDB format and search for real-world proteins with similar folds using the Foldseek API.
+- **RCSB PDB Loading**: Load real protein structures directly from the Protein Data Bank into the playground for analysis.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React (Vite)
+- **3D Graphics**: [React Three Fiber](https://r3f.docs.pmnd.rs/) (Three.js)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Styling**: Tailwind CSS
+- **Interactions**: @use-gesture/react
+- **APIs**:
+  - [Foldseek](https://search.foldseek.com/api/ticket) for structure similarity search
+  - [RCSB PDB](https://www.rcsb.org/) for protein structure data
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📥 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd yash.fun
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+
+- `src/components/projects/protein/`: Core playground components (Canvas, Sidebar, Search).
+- `src/stores/useProteinStore.ts`: Centralized state management for the protein builder.
+- `src/utils/pdbExporter.ts`: Sanitization and PDB file generation logic.
+- `src/data/aminoAcids.ts`: Comprehensive dataset of amino acid properties.
+
+## 🧪 License
+Copyright © 2026. All rights reserved.
