@@ -9,6 +9,8 @@ import { ProteinFoldingPage } from './components/ProteinFoldingPage';
 import { ProteinPlaygroundPage } from './components/ProteinPlaygroundPage';
 import { ScrollToTop } from './components/ScrollToTop';
 import { BackToTop } from './components/BackToTop';
+import { TicTacToePage } from './components/projects/tictactoe/TicTacToePage';
+import { ChessPage } from './components/projects/chess/ChessPage';
 
 function HomePage() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/protein-folding" element={<ProteinFoldingPage />} />
         <Route path="/protein-playground" element={<ProteinPlaygroundPage />} />
+        <Route path="/tic-tac-toe" element={<TicTacToePage />} />
+        <Route path="/chess" element={<ChessPage />} />
       </Routes>
     </BrowserRouter>
   );

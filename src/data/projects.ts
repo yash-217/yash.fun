@@ -22,6 +22,26 @@ export const projects: Project[] = [
         tags: ['Three.js', 'PDB', 'WebGL'],
         internalLink: '/protein-folding',
     },
+    {
+        id: 'tic-tac-toe',
+        title: 'Neon Tic-Tac-Toe',
+        description: 'Classic strategy game with a futuristic twist. Challenge a friend!',
+        emoji: '⭕',
+        color: '#ec4899',
+        gradient: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)',
+        tags: ['React', 'Game', 'TypeScript'],
+        internalLink: '/tic-tac-toe',
+    },
+    {
+        id: 'chess',
+        title: 'Neon Chess',
+        description: 'Battle the CPU or a friend. Powered by Stockfish 17 engine.',
+        emoji: '♟️',
+        color: '#8b5cf6',
+        gradient: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)',
+        tags: ['React', 'Stockfish', 'Game'],
+        internalLink: '/chess',
+    },
 ];
 
 export const featuredProjects = projects.filter(p => p.featured);

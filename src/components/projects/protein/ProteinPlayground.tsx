@@ -1,6 +1,6 @@
 import { useRef, useCallback, useEffect, useState, createContext, useContext } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
-import { OrbitControls, Grid } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -121,20 +121,6 @@ function Scene() {
             <directionalLight position={[10, 10, 10]} intensity={1.2} />
             <pointLight position={[-10, 10, -10]} intensity={0.8} color="#8b5cf6" />
             <spotLight position={[0, 20, 0]} angle={0.3} penumbra={1} intensity={1} castShadow />
-
-            {/* Grid */}
-            <Grid
-                args={[50, 50]}
-                cellSize={1}
-                cellThickness={0.5}
-                cellColor="#2d2d3d"
-                sectionSize={5}
-                sectionThickness={1}
-                sectionColor="#4d4d6d"
-                fadeDistance={50}
-                fadeStrength={1}
-                infiniteGrid
-            />
 
             {/* Drop plane for raycasting */}
             <DropPlane />

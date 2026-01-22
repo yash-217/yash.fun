@@ -35,6 +35,10 @@ export function AminoAcidSidebar({ onSelect, selectedCode }: AminoAcidSidebarPro
     );
     const [searchQuery, setSearchQuery] = useState('');
 
+    const handleSelect = (aa: AminoAcid) => {
+        onSelect?.(aa);
+    };
+
     const handleDragStart = (e: React.DragEvent, aminoAcid: AminoAcid) => {
         e.dataTransfer.setData('application/json', JSON.stringify(aminoAcid));
         e.dataTransfer.effectAllowed = 'copy';
@@ -117,7 +121,7 @@ export function AminoAcidSidebar({ onSelect, selectedCode }: AminoAcidSidebarPro
                                         {CATEGORY_ICONS[category]}
                                     </div>
                                     <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] group-hover:text-gray-300 transition-colors">
-                                        {categoryInfo.name}
+                                        {categoryInfo.label}
                                     </span>
                                 </div>
                                 <svg
@@ -138,9 +142,10 @@ export function AminoAcidSidebar({ onSelect, selectedCode }: AminoAcidSidebarPro
                                     >
                                         {filteredAA.map((aa) => (
                                             <motion.div
-                                                key={aa.id}
+                                                key={aa.code}
                                                 draggable
                                                 onDragStart={(e) => handleDragStart(e as any, aa)}
+                                                onClick={() => handleSelect(aa)}
                                                 whileHover={{ y: -4, scale: 1.02 }}
                                                 className={`
                                                     relative h-24 p-4 rounded-2xl bg-[#0a0a0f] border border-white/5 cursor-grab active:cursor-grabbing group

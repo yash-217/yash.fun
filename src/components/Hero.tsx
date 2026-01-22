@@ -25,7 +25,6 @@ export function Hero() {
                 <div className="hero-gradient-orb hero-gradient-orb-1" />
                 <div className="hero-gradient-orb hero-gradient-orb-2" />
                 <div className="hero-gradient-orb hero-gradient-orb-3" />
-                <div className="hero-grid" />
             </div>
 
             <div className="hero-content">
