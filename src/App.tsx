@@ -5,8 +5,10 @@ import { Hero } from './components/Hero';
 import { ProjectsGrid } from './components/ProjectsGrid';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
-import { ProteinFoldingPage } from './pages/ProteinFoldingPage';
-import { ProteinPlaygroundPage } from './pages/ProteinPlaygroundPage';
+import { ProteinFoldingPage } from './components/ProteinFoldingPage';
+import { ProteinPlaygroundPage } from './components/ProteinPlaygroundPage';
+import { ScrollToTop } from './components/ScrollToTop';
+import { BackToTop } from './components/BackToTop';
 
 function HomePage() {
   return (
@@ -25,6 +27,8 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <BackToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/protein-folding" element={<ProteinFoldingPage />} />

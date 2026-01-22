@@ -197,3 +197,182 @@
         font-size: 2.5rem;
     }
 }
+
+/* ======================== */
+/* Amino Acid Explorer      */
+/* ======================== */
+
+.amino-acid-explorer {
+    margin-top: var(--spacing-lg);
+}
+
+/* Category Tabs */
+.explorer-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.category-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-tab:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.category-tab.active {
+    color: var(--text-primary);
+}
+
+.category-tab .category-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.category-tab .category-label {
+    font-weight: 600;
+}
+
+.category-tab .category-count {
+    font-size: var(--text-xs);
+    opacity: 0.6;
+}
+
+/* Explorer Header */
+.explorer-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.explorer-header h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.explorer-header p {
+    color: var(--text-secondary);
+    font-size: var(--text-base);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Amino Acid Grid */
+.explorer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* Amino Acid Card */
+.amino-acid-card {
+    background: rgba(26, 26, 37, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.amino-acid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 3D Preview */
+.amino-acid-preview {
+    height: 250px;
+    background: linear-gradient(180deg, rgba(15, 15, 20, 0.8) 0%, rgba(20, 20, 28, 0.6) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.amino-acid-preview canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Amino Acid Info */
+.amino-acid-info {
+    padding: var(--spacing-md);
+}
+
+.amino-acid-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.amino-acid-symbol {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.amino-acid-names {
+    display: flex;
+    flex-direction: column;
+}
+
+.amino-acid-name {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.amino-acid-code {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+.amino-acid-description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Explorer */
+@media (max-width: 768px) {
+    .explorer-categories {
+        gap: 6px;
+    }
+
+    .category-tab {
+        padding: 8px 12px;
+        font-size: var(--text-xs);
+    }
+
+    .explorer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amino-acid-preview {
+        height: 220px;
+    }
+}

@@ -4,7 +4,7 @@ export const projects: Project[] = [
     {
         id: 'fleet-manager',
         title: 'Upasna Borewells Companion',
-        description: 'Vehicle fleet management system with expense tracking and service request handling',
+        description: 'Vehicle fleet management system with service request handling and expense tracking',
         emoji: '🚛',
         color: '#6366f1',
         gradient: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     {
         id: 'protein-viewer',
         title: 'Protein Structure Viewer',
-        description: 'Interactive 3D visualization of Crambin protein loaded from PDB with element-based coloring',
+        description: 'Interactive 3D visualization of simple protein structures loaded from PDB with element-based coloring',
         emoji: '🧬',
         color: '#10b981',
         gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',

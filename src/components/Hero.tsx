@@ -94,22 +94,6 @@ export function Hero() {
                         Learn More
                     </motion.a>
                 </motion.div>
-
-                <motion.div
-                    className="hero-scroll-indicator"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                >
-                    <motion.div
-                        animate={{ y: [0, 8, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M12 5v14M19 12l-7 7-7-7" />
-                        </svg>
-                    </motion.div>
-                </motion.div>
             </div>
         </section>
     );
